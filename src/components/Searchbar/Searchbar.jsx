@@ -34,7 +34,7 @@ export class Searchbar extends Component {
             autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
-            name="searchQuery"
+            name="query"
             value={this.state.query}
             onChange={this.handleChange}
           />
