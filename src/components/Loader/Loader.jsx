@@ -1,18 +1,19 @@
-import { Audio } from 'react-loader-spinner';
+import { BallTriangle } from 'react-loader-spinner';
 import css from "./Loader.module.css"
 
 export const Loader = () => {
     return (
         <div className={css.loader}>
-            <Audio
-  height="80"
-  width="80"
-  radius="9"
-  color="green"
-  ariaLabel="loading"
-  wrapperStyle
-  wrapperClass
-/>
-        </div>
+   <BallTriangle
+        height={100}
+        width={100}
+        radius={5}
+        color="rgba(128, 128, 128, 0.9)"
+        ariaLabel="ball-triangle-loading"
+        wrapperClass={{}}
+        wrapperStyle=""
+        visible={true}
+      />
+    </div>
     )
 }

@@ -2,7 +2,6 @@ import { Component } from "react";
 import PropTypes from "prop-types";
 import css from "./Modal.module.css";
 
-// const modalRoot = document.querySelector('#modal-root');
 export class Modal extends Component {
     componentDidMount() {
         window.addEventListener('keydown', this.handleKeyDown)
@@ -18,7 +17,7 @@ export class Modal extends Component {
         }
     }
 
-     handleBackDropClick = e => {
+     handleClickBackDrop = e => {
     if (e.currentTarget === e.target) {
       this.props.closeModal();
     }
@@ -26,7 +25,7 @@ export class Modal extends Component {
 
     render() {
         return (
-        <div className={css.overlay} onClick={this.handleBackDropClick}>
+        <div className={css.overlay} onClick={this.handleClickBackDrop}>
             <div className={css.modal}>
                 <img src={this.props.largeImageURL} alt="" />
             </div>

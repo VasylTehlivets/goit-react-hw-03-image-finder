@@ -1,66 +1,33 @@
 import { Component } from "react";
+import { ReactComponent as SearchIcon } from './Search.svg';
 import PropTypes from "prop-types";
 import css from "./Searchbar.module.css";
 
-// export class Searchbar extends Component {
-  
-//     render() {
-//             return (
-//     <header className={css.searchbar}>
-//   <form className={css.form} onSubmit={this.onSubmit}>
-//     <button type="submit" className={css.button}>
-//       <span className={css.buttonLabel}>Search</span>
-//     </button>
-
-//     <input
-//       className={css.input}
-//       type="text"
-//       name="search"
-//       autoComplete="off"
-//       autoFocus
-//       placeholder="Search images and photos"
-//     />
-//   </form>
-// </header>
-// )
-//     }
-// }
-
-// Searchbar.propTypes = {
-//   onSubmit: PropTypes.func,
-// };
-
-
 export class Searchbar extends Component {
   state = {
-    searchQuery: '',
+    query: '',
   };
 
   handleChange = e => {
-    // const { name, value } = e.currentTarget;
-    // this.setState({ [name]: value });
-    this.setState({ searchQuery: e.currentTarget.value.toLowerCase() });
+    this.setState({ query: e.currentTarget.value.toLowerCase() });
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    if (this.state.searchQuery.trim() === '') {
-      return alert('Please enter something :)');
+    if (this.state.query.trim() === '') {
+      return alert('Please enter something');
     }
-    this.props.onSubmit(this.state.searchQuery);
-    this.setState({ searchQuery: '' });
+    this.props.onSubmit(this.state.query);
+    this.setState({ query: '' });
   };
 
   render() {
     return (
       <header className={css.searchbar}>
         <form onSubmit={this.handleSubmit} className={css.form}>
-          <button type="submit" className={css.button}>
-           
-       <span className={css.buttonLabel}>Search</span>
-  
+          <button type="submit" className={css.button}>  
+            <SearchIcon  size={30} stroke="#324ff1"/>  
           </button>
-
           <input
             className={css.input}
             type="text"
@@ -68,7 +35,7 @@ export class Searchbar extends Component {
             autoFocus
             placeholder="Search images and photos"
             name="searchQuery"
-            value={this.state.searchQuery}
+            value={this.state.query}
             onChange={this.handleChange}
           />
         </form>
