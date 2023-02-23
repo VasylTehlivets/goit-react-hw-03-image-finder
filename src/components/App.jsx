@@ -5,7 +5,7 @@ import { ImageGallery } from "./ImageGallery/ImageGallery";
 import { Loader } from "./Loader/Loader";
 import { Modal } from "./Modal/Modal";
 import { Searchbar } from "./Searchbar/Searchbar";
-import {fetchImages} from "./Servises/Api"
+import {fetchImages} from "../Servises/Api"
 
 import css from "./App.module.css";
 
